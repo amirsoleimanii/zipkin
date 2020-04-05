@@ -72,16 +72,11 @@ spec:
           containerPort: 9411
         readinessProbe:
           httpGet:
-            path: /api/v1/services
+            path: /api/v2/services
             port: 9411
           initialDelaySeconds: 20
           periodSeconds: 15
           failureThreshold: 6
-        livenessProbe:
-          httpGet:
-            path: /health
-            port: 9411
-          initialDelaySeconds: 20
         resources:
           limits:
             cpu: "0"
